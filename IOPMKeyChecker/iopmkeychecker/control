@@ -1,0 +1,9 @@
+Package: com.kurrtandsquiddy.iopmkeychecker
+Name: IOPMKeyChecker
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Check if IOPM preference keys are valid on the current device.
+Maintainer: Kurrt+Squiddy
+Author: Kurrt+Squiddy
+Section: System
+Tag: role::hacker

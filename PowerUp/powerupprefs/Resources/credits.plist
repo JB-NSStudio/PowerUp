@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Developers</string>
+		</dict>
+		<dict>
+			<key>big</key>
+			<true/>
+			<key>cellClass</key>
+			<string>PUPTwitterCell</string>
+			<key>height</key>
+			<integer>56</integer>
+			<key>label</key>
+			<string>Kurrt</string>
+			<key>user</key>
+			<string>KurrtDev</string>
+			<key>smallText</key>
+			<string>Developer</string>
+			<key>subtitle</key>
+			<string>IDK MAN</string>
+		</dict>
+
+		<dict>
+			<key>big</key>
+			<true/>
+			<key>cellClass</key>
+			<string>PUPTwitterCell</string>
+			<key>height</key>
+			<integer>56</integer>
+			<key>label</key>
+			<string>Squiddy</string>
+			<key>user</key>
+			<string>Squidkingdom</string>
+			<key>smallText</key>
+			<string>Developer</string>
+		</dict>
+	
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>Contributions From</string>
+		</dict>
+		<dict>
+			<key>big</key>
+			<true/>
+			<key>cellClass</key>
+			<string>PUPTwitterCell</string>
+			<key>height</key>
+			<integer>56</integer>
+			<key>label</key>
+			<string>Ryan Petrich</string>
+			<key>user</key>
+			<string>rpetrich</string>
+			<key>smallText</key>
+			<string>CPU Throttling</string>
+		</dict>
+		<dict>
+			<key>big</key>
+			<true/>
+			<key>cellClass</key>
+			<string>PUPTwitterCell</string>
+			<key>height</key>
+			<integer>56</integer>
+			<key>label</key>
+			<string>UserlandKernel</string>
+			<key>user</key>
+			<string>userlandkernel</string>
+			<key>smallText</key>
+			<string>Original Deepsleep</string>
+		</dict>
+		<dict>
+			<key>big</key>
+			<true/>
+			<key>cellClass</key>
+			<string>PUPTwitterCell</string>
+			<key>height</key>
+			<integer>56</integer>
+			<key>label</key>
+			<string>Code2K</string>
+			<key>user</key>
+			<string>code2klabs</string>
+			<key>smallText</key>
+			<string>Deepsleep Reference</string>
+		</dict>
+		
+		
+		
+		
+	</array>
+	<key>title</key>
+	<string>Credits</string>
+</dict>
+</plist>

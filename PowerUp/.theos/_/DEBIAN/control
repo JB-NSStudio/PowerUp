@@ -1,0 +1,10 @@
+Package: com.kurrtandsquiddy.powerup
+Name: Power Up
+Depends: mobilesubstrate, ws.hbang.common (>= 1.11), preferenceloader, grep
+Architecture: iphoneos-arm
+Description: Speed up charging.
+Maintainer: Kurrt, Squiddy
+Author: Kurrt, Squiddy
+Section: Tweaks
+Version: 0.0.1-76+debug
+Installed-Size: 800

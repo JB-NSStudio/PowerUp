@@ -1,0 +1,9 @@
+Package: com.kurrtandsquiddy.powerup.rootmepls
+Name: RootMePls
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome tool of some sort!!
+Maintainer: Kurrt+Squiddy
+Author: Kurrt+Squiddy
+Section: System
+Tag: role::hacker
