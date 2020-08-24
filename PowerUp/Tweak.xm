@@ -8,7 +8,7 @@ static id 				idleTimerController = nil;
 static BOOL 			isUserLocked;
 static BOOL 			cachedAirplane = NO;
 static BOOL 			isEffectEnabled = NO;
-static BOOL 			isPowerButtonDown = NO;
+static BOOL 			isPowerButtonDown = YES;
 
 //Refs
 static AVFlashlight 	*flashLightObj;
@@ -582,7 +582,7 @@ void loadPrefs(){
 	LISTEN_NOTIF(loadPrefs, "com.kurrtandsquiddy.powerup/settingschanged")
 
 	//I dont know why i have to set this here, i set it when i delcare but if i dont do this it starts as true
-	isPowerButtonDown = NO;
+	
 
 	// All processes need to listen for these
 	LISTEN_NOTIF(enable_process_jobs, ENABLE_NOTIF)

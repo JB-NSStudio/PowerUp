@@ -1,5 +1,6 @@
 # THEOS_DEVICE_IP = localhost
 # THEOS_DEVICE_PORT = 2222
+FOR_RELEASE= 1
 export ARCHS = arm64 arm64e
 export TARGET := iphone:clang:11.2
 export INSTALL_TARGET_PROCESSES = thermalmonitord backboardd SpringBoard 
@@ -25,4 +26,3 @@ include $(THEOS_MAKE_PATH)/aggregate.mk
 before-stage::
 	cp .theos/obj/debug/PowerUp_RootMePls "./layout/Library/Application Support/PowerUp.bundle/";
 	chmod 6755 "./layout/Library/Application Support/PowerUp.bundle/PowerUp_RootMePls";
-
