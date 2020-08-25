@@ -25,7 +25,6 @@ static BOOL kDeepsleep = YES;
 static BOOL kAutoWake = YES;
 static BOOL kThrottle = YES;
 static BOOL kEnabled = YES;
-static BOOL kDaemon = NO;
 static BOOL kOLED = NO;
 static int  kUnplugWakeDelay = 0;
 static BOOL kRespringToWake = NO;
@@ -554,15 +553,14 @@ void disable_process_jobs() {
 void loadPrefs(){
 	NSDictionary *prefs = [[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.kurrtandsquiddy.powerup"];
 	if (prefs) {
-		kEnabled            =      [prefs objectForKey:@"kEnabled"] ? [[prefs objectForKey:@"kEnabled"] boolValue] : kEnabled;
-		kAutoWake           =      [prefs objectForKey:@"kAutoWake"] ? [[prefs objectForKey:@"kAutoWake"] boolValue] : kAutoWake;
+		kEnabled            =      [prefs objectForKey:@"kEnabled"] ? [[prefs objectForKey:@"kEnabled"] boolValue] : YES;
+		kAutoWake           =      [prefs objectForKey:@"kAutoWake"] ? [[prefs objectForKey:@"kAutoWake"] boolValue] : NO;
 		kAutoWakePercent    =      [prefs objectForKey:@"kAutoWakePercent"] ? [[prefs objectForKey:@"kAutoWakePercent"] floatValue] : DEFAULT_AUTO_WAKE_PERC;
-		kOLED               =      [prefs objectForKey:@"kOLED"] ? [[prefs objectForKey:@"kOLED"] boolValue] : kOLED;
-		kDeepsleep          =      [prefs objectForKey:@"kDeepsleep"] ? [[prefs objectForKey:@"kDeepsleep"] boolValue] : kDeepsleep;
-		kDaemon             =      [prefs objectForKey:@"kDaemon"] ? [[prefs objectForKey:@"kDaemon"] boolValue] : kDaemon;
-		kThrottle           =      [prefs objectForKey:@"kThrottle"] ? [[prefs objectForKey:@"kThrottle"] boolValue] : kThrottle;
-		kUnplugWakeDelay	=	   [prefs objectForKey:@"kUnplugWakeDelay"] ? [[prefs objectForKey:@"kUnplugWakeDelay"] floatValue] : kUnplugWakeDelay;
-		kRespringToWake		=	   [prefs objectForKey:@"kRespringToWake"] ? [[prefs objectForKey:@"kRespringToWake"] boolValue] : kRespringToWake;
+		kOLED               =      [prefs objectForKey:@"kOLED"] ? [[prefs objectForKey:@"kOLED"] boolValue] : NO;
+		kDeepsleep          =      [prefs objectForKey:@"kDeepsleep"] ? [[prefs objectForKey:@"kDeepsleep"] boolValue] : YES;
+		kThrottle           =      [prefs objectForKey:@"kThrottle"] ? [[prefs objectForKey:@"kThrottle"] boolValue] : YES;
+		kUnplugWakeDelay	=	   [prefs objectForKey:@"kUnplugWakeDelay"] ? [[prefs objectForKey:@"kUnplugWakeDelay"] floatValue] : 0;
+		kRespringToWake		=	   [prefs objectForKey:@"kRespringToWake"] ? [[prefs objectForKey:@"kRespringToWake"] boolValue] : NO;
 	}
 
 	//If autowake is 0 or kAutoWake is off never be able to meet AutoWake percent

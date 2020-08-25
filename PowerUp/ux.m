@@ -51,10 +51,13 @@ void stopWakeButton() {
 
 // show Confirm alert
 -(void)confirmAlert{
+   //TBH the styling here shouldnt be a role model. I shouldve inset subview but I was learning how UIKit do at this point so eh
     if(confirmWindow) return;
     dispatch_async (dispatch_get_main_queue(), ^{
          confirmWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-         confirmWindow.windowLevel = DBL_MAX;
+        //This line is what cause the insta-crash on iOS 12, as it was previously set to CGLFLOAT_MAX we realized this crashed and changed it, and it got scrambled in git
+        //Easy fix though.
+         confirmWindow.windowLevel = UIWindowLevelAlert +1;
          if ([confirmWindow respondsToSelector:@selector(_setSecure:)])
              [confirmWindow _setSecure:YES]; //makes it displayable in the lockscreen by first testing if the current iOS responds to the _setSecure method.
         
@@ -129,12 +132,12 @@ void stopWakeButton() {
         powerUP.font = [UIFont boldSystemFontOfSize:40];
 
         //Body Text
-        UILabel *mainText = [[UILabel alloc] initWithFrame:CGRectMake(29.f,50.f,350.f,160.f)];
-        mainText.text = @"Would you like to enable PowerUp? \nThis will put your device in a hibernation mode and you will have to unplug or override to resume using your device";
+        UILabel *mainText = [[UILabel alloc] initWithFrame:CGRectMake(29.f,47.f,350.f,160.f)];
+        mainText.text = @"Would you like to enable PowerUp? \nThis will put your device in a hibernation mode and you will have to unplug or override by holding power button for 2 seconds to resume using your device";
         mainText.textAlignment = 0;
         mainText.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
         mainText.textColor = [UIColor darkTextColor];
-        [mainText setNumberOfLines:4];
+        [mainText setNumberOfLines:5];
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:mainText.text];
         NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
         [paragraphStyle setLineSpacing:5];
@@ -207,7 +210,7 @@ void stopWakeButton() {
     dispatch_async (dispatch_get_main_queue(), ^{
         // Create the window and its root view controller
         oledWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        oledWindow.windowLevel = DBL_MAX;
+        oledWindow.windowLevel = UIWindowLevelAlert +1;
         if ([oledWindow respondsToSelector:@selector(_setSecure:)])
             [oledWindow _setSecure:YES]; //makes it displayable in the lockscreen by first testing if the current iOS responds to the _setSecure method.
         UIViewController *controller = [[UIViewController alloc] init];
@@ -337,7 +340,8 @@ void stopWakeButton() {
 // turning on if the device temporarily exits sleep.
 -(void)showCurtain{
     curtainWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        curtainWindow.windowLevel = DBL_MAX;
+    
+        curtainWindow.windowLevel = UIWindowLevelAlert +1;
         if ([curtainWindow respondsToSelector:@selector(_setSecure:)])
             [curtainWindow _setSecure:YES]; //makes it displayable in the lockscreen by first testing if the current iOS responds to the _setSecure method.
         UIViewController *controller = [[UIViewController alloc] init];
