@@ -2,7 +2,7 @@
 Speed up charging by entering a super low power state while plugged in.
 <br/><br/>
 ## What does the low power state do?
-- Sleeps the system using built in IOKit methods, often incorrectly referred to as deep sleep or hibernation.
+- Sleeps the system using built in IOKit methods. (We refer to this as deepsleep in settings for user clarity)
 - Turns on aeroplane plane mode.
 - Enables low power mode.
 - Throttles the system using methods in thermalmonitord.
